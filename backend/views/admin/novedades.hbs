@@ -1,0 +1,28 @@
+<div class="admin-panel">
+    <div class="header-admin">
+        <h2>Bienvenido, {{nombre}}</h2>
+        <a href="/admin/login/logout" class="btn-logout">Cerrar Sesión</a>
+    </div>
+
+    <p><a href="/admin/novedades/agregar" class="btn-primary">Agregar Novedad</a></p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Subtítulo</th>
+                <th colspan="2">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each novedades}}
+            <tr>
+                <td>{{titulo}}</td>
+                <td>{{subtitulo}}</td>
+                <td><a href="/admin/novedades/modificar/{{id}}">Modificar</a></td>
+                <td><a href="/admin/novedades/eliminar/{{id}}">Eliminar</a></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

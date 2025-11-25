@@ -1,0 +1,149 @@
+
+.cuerpo-v {
+    max-width: 900px; 
+    margin: 3rem auto; 
+    background-color: #2d8c2665;
+    border-radius: 1rem; 
+    box-shadow: 0 15px 40px rgba(136, 168, 136, 0.782), 0 5px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;  
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cuerpo-v:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15), 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+.cv {
+    position: relative;
+    width: 100%;
+  
+    height: 350px; 
+    
+ 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+  
+    background-color: #E0E7FF; 
+}
+
+
+.overay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 60%);
+    z-index: 10;
+}
+
+
+.overay2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem 2rem;
+    z-index: 20; 
+    color: #ffffffbd; 
+}
+
+
+.titulo {
+    font-size: 2.25rem; 
+    font-weight: 700; 
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0); 
+}
+
+
+.subtitulo {
+    font-size: 1.25rem; 
+    font-weight: 400; 
+    opacity: 0.9;
+    line-height: 1.4;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); 
+}
+
+
+
+.descripcion {
+    padding: 2rem;
+}
+
+.cuerpoDescripcion {
+    font-size: 1.1rem;
+    line-height: 1.7; 
+    color: #ffffff; 
+    text-shadow: 1px 1px 3px rgba(67, 213, 27, 0.7);
+    text-align: justify;
+}
+
+
+
+@media (max-width: 640px) {
+    
+    .cuerpo-v {
+        margin: 1rem auto;
+        border-radius: 0; 
+        box-shadow: none;
+    }
+
+
+    .cv {
+        height: 250px;
+    }
+
+    
+    .titulo {
+        font-size: 1.75rem;
+    }
+
+    .subtitulo {
+        font-size: 1rem;
+    }
+    
+    
+    .descripcion {
+        padding: 1.5rem;
+    }
+
+    .cuerpoDescripcion {
+        font-size: 1rem;
+    }
+}
+
+
+.trasparente {
+    /* Elimina cualquier color de fondo */
+    background-color: transparent !important; 
+    
+    /* Asegura que no haya bordes por defecto del enlace */
+    border: none;
+    
+    /* Si es un enlace dentro de un header, también puedes resetear el padding/margin si es necesario */
+    padding: 0;
+    margin: 0;
+
+    /* Estilo del texto dentro del enlace */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    /* El color del texto ya debería estar definido por el header, pero puedes forzarlo aquí */
+    color: inherit; /* Hereda el color del padre (probablemente blanco del header) */
+}
+
+/* Para el H1 dentro del enlace, si quieres que el enlace no afecte su estilo */
+.trasparente h1 {
+    /* Eliminar posibles márgenes por defecto del h1 para que el click sea solo en el texto */
+    margin: 0;
+    padding: 0;
+    background-color: transparent 
+}
+
+
+

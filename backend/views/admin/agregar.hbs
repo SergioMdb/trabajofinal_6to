@@ -1,0 +1,36 @@
+<div class="admin-panel">
+<h2>Agregar Nueva Novedad</h2>
+{{!-- UNIFICAMOS: Este es el único formulario que debe existir, y usa enctype para la imagen --}}
+<form action="/admin/novedades/agregar" method="post" enctype="multipart/form-data">
+    
+    <div class="form-group">
+        <label for="titulo">Título:</label>
+        {{!-- Se recomienda que el valor por defecto sea vacío si no se envían datos en el GET inicial --}}
+        <input type="text" id="titulo" name="titulo" value="{{titulo}}" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="subtitulo">Subtítulo:</label>
+        <input type="text" id="subtitulo" name="subtitulo" value="{{subtitulo}}" required>
+    </div>
+
+    <div class="form-group">
+        <label for="cuerpo">Cuerpo:</label>
+        <textarea id="cuerpo" name="cuerpo" required>{{cuerpo}}</textarea>
+    </div>
+    
+    {{!-- Campo de IMAGEN (Ahora parte del formulario principal) --}}
+    <div class="form-group">
+        <label for="imagen">Imagen:</label>
+        <input type="file" id="imagen" name="imagen"> 
+    </div>
+
+    <button type="submit">Guardar Novedad</button>
+</form>
+
+{{#if error}}
+    <p class="error-message">{{message}}</p>
+{{/if}}
+
+
+</div>

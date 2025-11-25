@@ -1,0 +1,53 @@
+<div class="admin-panel">
+<h2>Modificar Novedad</h2>
+
+{{!-- UNIFICAMOS: Usamos enctype para permitir la subida de una nueva imagen --}}
+<form action="/admin/novedades/modificar" me
+thod="post" enctype="multipart/form-data">
+    
+    <input type="hidden" name="id" value="{{novedad.id}}"> 
+    {{!-- CRÍTICO: Campo oculto para el ID original de Cloudinary --}}
+    <input type="hidden" name="img_original" value="{{novedad.img_id}}"> 
+
+    <div class="form-group">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="titulo" value="{{novedad.titulo}}" required> 
+    </div>
+    
+    <div class="form-group">
+        <label for="subtitulo">Subtítulo:</label>
+        <input type="text" id="subtitulo" name="subtitulo" value="{{novedad.subtitulo}}" required>
+    </div>
+
+    <div class="form-group">
+        <label for="cuerpo">Cuerpo:</label>
+        <textarea id="cuerpo" name="cuerpo" required>{{novedad.cuerpo}}</textarea>
+    </div>
+
+    {{!-- Gestión de Imagen --}}
+    <div class="form-group image-preview-group">
+        <label>Imagen Actual:</label>
+        {{#if novedad.img_id}}
+            {{!-- Muestra la imagen actual si existe. Asume que tienes un helper o una URL base para Cloudinary --}}
+            <img src="https://res.cloudinary.com/{{env.CLOUDINARY_CLOUD_NAME}}/image/upload/w_200/{{novedad.img_id}}" alt="Imagen actual" style="max-width: 200px; height: auto;">
+            <p class="small text-muted">ID: {{novedad.img_id}}</p>
+        {{else}}
+            <p>No hay imagen cargada.</p>
+        {{/if}}
+    </div>
+
+    {{!-- Campo para subir nueva imagen --}}
+    <div class="form-group">
+        <label for="imagen">Subir nueva imagen (reemplaza la actual):</label>
+        <input type="file" id="imagen" name="imagen"> 
+    </div>
+
+    <button type="submit">Guardar Cambios</button>
+</form>
+
+{{#if error}}
+    <p class="error-message">{{message}}</p>
+{{/if}}
+
+
+</div>
